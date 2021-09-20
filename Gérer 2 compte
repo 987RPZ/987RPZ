@@ -1,0 +1,27 @@
+#Guillaume et Marion veulent un petit programme pour gérer leurs comptes bancaires. 
+#Ils ont chacun un compte, et veulent recevoir différents messages selon l'état de leur compte et celui de leur conjoint: 
+#les deux positifs, ou bien les deux négatifs, ou bien l'un positif et l'autre négatif avec un transfert possible pour rétablir la situation, 
+#ou bien l'un positif et l'autre négatif sans transfert possible pour rétablir la situation.
+
+gestion_compte = input("Lancement de la gestion des compte:")
+if (gestion_compte == "non") :
+    print("Ok. A bientot!")
+    
+else: 
+    compte_guillaume = float(input("Solde du compte de Guillaume?"))
+    compte_marion = float(input("Solde du compte de Marion?"))   
+     
+    if (compte_guillaume and compte_marion) > 0:
+         print("Tous les deux en positif!")
+         if compte_guillaume>0 and compte_marion<0:
+             compte_guillaume1 = compte_guillaume - abs(compte_marion)
+             print(f'Marion est négatif.\nGuillaume peut lui tranférer {abs(compte_marion):.0f}', "euro (il lui restera", compte_guillaume1, "euro).")
+             if compte_guillaume<0 and compte_marion:
+                    print("Guillaume est en négatif.\nImpossible de rétablir la situation.")
+     else:# (compte_guillaume and compte_marion) < 0:
+         print("Tous les deux négatif!\nImpossible de rétablir la situation")  
+
+
+            
+
+       
